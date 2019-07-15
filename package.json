@@ -1,0 +1,24 @@
+{
+  "license": "MIT",
+  "name": "popup-menu",
+  "description": "Lightweight and simple popup menu for web applications",
+  "author": {
+    "name": "Andrey Klebanov",
+    "email": "andrey.klebanov@yahoo.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/web-components-js/popup-menu.git"
+  },
+  "main": "popup-menu.js",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-eslint": "^6.0.0",
+    "polyserve": "^0.27.15",
+    "webpack": "^4.35.3",
+    "webpack-cli": "^3.3.6"
+  },
+  "scripts": {
+    "start": "npx webpack && polyserve --open 'demo/'"
+  }
+}

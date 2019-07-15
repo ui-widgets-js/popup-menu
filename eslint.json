@@ -1,0 +1,16 @@
+{
+  "env":
+  { "browser": true, "node": false, "es6": true },
+  "parserOptions": { "ecmaVersion": 2017, "sourceType": "module" },
+  "extends": [ "eslint:recommended" ],
+  "rules": {
+    "linebreak-style": [ "error", "unix" ],
+    "quotes": [ "off", "single" ],
+    "semi": [ "warn", "always" ],
+    "curly": [ "error", "multi-line" ],
+    "no-console": [ "off" ],
+    "no-multiple-empty-lines": [ "warn" ],
+    "no-tabs": [ "warn" ],
+    "no-extra-boolean-cast": [ "off" ]
+  }
+}
