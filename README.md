@@ -1,8 +1,8 @@
 # popup-menu
 
-Simple, lightweight and easy-to-use popup menu UI widget for web applications.
+Simple, lightweight, and easy-to-use popup menu UI widget for web applications.
 
-<img src="screenshot.png" height="30%" width="30%">
+<img src="screenshot.png" height="60%" width="60%">
 
 ## Viewing Demo Application
 
@@ -10,7 +10,7 @@ First, run `npm install` to install all development dependencies. Then run `npm 
 
 ## Using PopupMenu in your application
 
-Check demo/index.js for the full example code.
+Check <a href="https://github.com/ui-widgets-js/popup-menu/blob/master/demo/index.js">demo/index.js</a> for the full example code.
 
 ```
   import PopupMenu, { PopupMenuItem, PopupMenuPosition } from './popup-menu.js';
@@ -28,4 +28,4 @@ Check demo/index.js for the full example code.
 
 ## License
 
-MIT License
+<a href="https://github.com/ui-widgets-js/popup-menu/blob/master/LICENSE">MIT License</a>
