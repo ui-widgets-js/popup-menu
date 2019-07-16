@@ -1,6 +1,6 @@
 {
-  "license": "MIT",
   "name": "popup-menu",
+  "version": "1.0.0",
   "description": "Lightweight and simple popup menu for web applications",
   "author": {
     "name": "Andrey Klebanov",
@@ -10,6 +10,14 @@
     "type": "git",
     "url": "https://github.com/web-components-js/popup-menu.git"
   },
+  "keywords": [
+    "javascript",
+    "uiwidgets",
+    "popup-menu",
+    "ui-components",
+    "context-menu"
+  ],
+  "license": "MIT",
   "main": "popup-menu.js",
   "devDependencies": {
     "gulp": "^4.0.2",
