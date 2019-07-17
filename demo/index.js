@@ -7,9 +7,10 @@ window.onload = () => {
 
   // Create menu items for the PopupMenu
   const itemList = [
-    new PopupMenuItem(1, 'First menu item'),
-    new PopupMenuItem(2, 'Second menu item'),
-    new PopupMenuItem(3, 'Third menu item')
+    new PopupMenuItem(1, 'Menu item One'),
+    new PopupMenuItem(2, 'Menu item Two'),
+    new PopupMenuItem(3, 'Menu item Three'),
+    new PopupMenuItem(4, 'Menu item Four')
   ];
 
   // Example of showing PopupMenu on the top of the first button:

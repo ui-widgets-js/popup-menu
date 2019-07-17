@@ -60,7 +60,8 @@ export default class PopupMenu extends HTMLElement {
         -ms-user-select: none;
         user-select: none;
         color: #24292E;
-        border-radius: 2px;
+        border-radius: 5px;
+        overflow: hidden;
       }
 
       .host .popup-menu-item {

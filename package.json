@@ -1,7 +1,7 @@
 {
-  "name": "popup-menu",
-  "version": "1.0.1",
-  "description": "Lightweight and simple popup menu for web applications",
+  "name": "@ui-widgets-js/popup-menu",
+  "version": "1.0.3",
+  "description": "Simple, lightweight, and easy-to-use popup menu UI widget for web applications.",
   "author": {
     "name": "Andrey Klebanov",
     "email": "andrey.klebanov@yahoo.com"
@@ -12,10 +12,13 @@
   },
   "keywords": [
     "javascript",
-    "uiwidgets",
+    "ui",
+    "widget",
+    "popup",
+    "context",
+    "menu",
     "popup-menu",
-    "ui-components",
-    "context-menu"
+    "ui-widgets-js"
   ],
   "license": "MIT",
   "main": "popup-menu.js",
