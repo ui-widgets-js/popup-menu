@@ -7,8 +7,8 @@ window.onload = () => {
 
   // Create menu items for the PopupMenu
   const itemList = [
-    new PopupMenuItem(1, 'Menu item One'),
-    new PopupMenuItem(2, 'Menu item Two'),
+    new PopupMenuItem(1, 'Menu item One', './images/image-one.svg'),
+    new PopupMenuItem(2, 'Menu item Two', './images/image-two.svg'),
     new PopupMenuItem(3, 'Menu item Three'),
     new PopupMenuItem(4, 'Menu item Four')
   ];

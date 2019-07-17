@@ -72,8 +72,16 @@ export default class PopupMenu extends HTMLElement {
         max-width: 100%;
         height: 32px;
         max-height: 32px;
-        flex-direction: column;
-        justify-content: center;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+      }
+
+      .host .popup-menu-item .image {
+        min-width: 30px;
+        min-height: 30px;
+        background-repeat: no-repeat;
+        background-position: center;
       }
 
       .host .popup-menu-item p {
@@ -93,6 +101,7 @@ export default class PopupMenu extends HTMLElement {
     const host = document.createElement('div');
     host.classList.add('host');
     host.id = 'host';
+    let isImagePresent = !!(menuItems.find(item => item.imageUrl));
     menuItems.forEach(item => {
       const p = document.createElement('p');
       p.innerText = item.itemName;
@@ -102,8 +111,17 @@ export default class PopupMenu extends HTMLElement {
       menuItem.addEventListener('click', () => {
         this._onPopupMenuItemClick(item.itemId);
       });
-      menuItem.appendChild(p);
 
+      if (item.imageUrl || isImagePresent) {
+        const image = document.createElement('div');
+        image.style.backgroundImage = item.imageUrl
+          ? `url('${item.imageUrl}')`
+          : '';
+        image.classList.add('image');
+        menuItem.appendChild(image);
+      }
+
+      menuItem.appendChild(p);
       host.appendChild(menuItem);
     });
 

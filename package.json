@@ -1,7 +1,7 @@
 {
   "name": "@ui-widgets-js/popup-menu",
-  "version": "1.0.3",
-  "description": "Simple, lightweight, and easy-to-use popup menu UI widget for web applications.",
+  "version": "1.0.4",
+  "description": "Simple, lightweight, framework-independent, and easy-to-use popup menu UI widget for web applications.",
   "author": {
     "name": "Andrey Klebanov",
     "email": "andrey.klebanov@yahoo.com"
