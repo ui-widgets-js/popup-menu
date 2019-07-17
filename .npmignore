@@ -1,0 +1,8 @@
+/demo/
+/.DS_Store
+/eslint.json
+/gulpfile.json
+/node_modules/
+/screenshot1.png
+/screenshot2.png
+/webpack.config.js
