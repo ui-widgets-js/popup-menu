@@ -42,7 +42,7 @@ export default class PopupMenu extends HTMLElement {
     this.shadow = this.attachShadow({ mode: 'open' });
     const style = document.createElement('style');
     style.textContent = `
-      .host {
+      :host {
         width: auto;
         height: auto;
         font-size: small;
@@ -51,7 +51,7 @@ export default class PopupMenu extends HTMLElement {
         overflow-y: auto;
         overflow-x: hidden;
         background-color: white;
-        position: relative;
+        position: absolute;
         box-sizing: border-box;
         box-shadow: rgba(221, 221, 221, 0.35) 0px 2px 8px;
         border: 1px lightgray solid;
@@ -64,7 +64,7 @@ export default class PopupMenu extends HTMLElement {
         overflow: hidden;
       }
 
-      .host .popup-menu-item {
+      .popup-menu-item {
         text-align: left;
         overflow: hidden;
         display: flex;
@@ -77,14 +77,18 @@ export default class PopupMenu extends HTMLElement {
         align-items: center;
       }
 
-      .host .popup-menu-item .image {
+      .popup-menu-item:hover {
+        background-color: #F1F8FF;
+      }
+
+      .popup-menu-item .image {
         min-width: 30px;
         min-height: 30px;
         background-repeat: no-repeat;
         background-position: center;
       }
 
-      .host .popup-menu-item p {
+      .popup-menu-item p {
         margin-top: 0px;
         margin-bottom: 0px;
         margin-left: 8px;
@@ -92,15 +96,9 @@ export default class PopupMenu extends HTMLElement {
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
-      }
-
-      .host .popup-menu-item:hover {
-        background-color: #F1F8FF;
+        color: inherit;
       }`;
 
-    const host = document.createElement('div');
-    host.classList.add('host');
-    host.id = 'host';
     let isImagePresent = !!(menuItems.find(item => item.imageUrl));
     menuItems.forEach(item => {
       const p = document.createElement('p');
@@ -114,20 +112,17 @@ export default class PopupMenu extends HTMLElement {
 
       if (item.imageUrl || isImagePresent) {
         const image = document.createElement('div');
-        image.style.backgroundImage = item.imageUrl
-          ? `url('${item.imageUrl}')`
-          : '';
+        image.style.backgroundImage
+          = item.imageUrl ? `url('${item.imageUrl}')` : '';
         image.classList.add('image');
         menuItem.appendChild(image);
       }
 
       menuItem.appendChild(p);
-      host.appendChild(menuItem);
+      this.shadow.appendChild(menuItem);
     });
 
     this.shadow.appendChild(style);
-    this.shadow.appendChild(host);
-    this.style.position = 'absolute';
   }
 
   /**
