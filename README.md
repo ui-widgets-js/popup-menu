@@ -33,14 +33,12 @@ First, run `npm install` to install all development dependencies. Then run `npm 
 ```
 Check <a href="https://github.com/ui-widgets-js/popup-menu/blob/master/demo/index.js">demo/index.js</a> for the full example code.
 
-## Styling the popup menu
+## Styling the PopupMenu
 
-Modify the font, the color, or any other style property of the PopupMenu by adding css to your web application.
-
-The example of modifying style of the PopupMenu:
+Modify the font, the color, or any other property of the PopupMenu by adding css for _popup-menu_ tag in your application. For example:
 ```
   body popup-menu {
-    color: lightbule;
+    color: blue;
     border: 1px solid lightblue;
   }
 ```

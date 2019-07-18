@@ -13,30 +13,13 @@ window.onload = () => {
     new PopupMenuItem(4, 'Menu item Four')
   ];
 
-  // Example of showing PopupMenu on the top of the first button:
-  
-  const button1 = document.getElementById('showMenuButton1');
-  button1.addEventListener('click', async e => {
-    // Mark this click event as ignored by the PopupMenu's event listener
-    e.preventDefault();
-    // Align PopupMenu position to the top left of the button
-    const position = PopupMenuPosition.alignTopLeft(button1);
-    // Show PopupMenu and wait for the selected menu id asynchronously
-    const selectedId = await PopupMenu.show(itemList, position);
-    if (selectedId) {
-      alert(`You have selected: ${itemList.find(item => item.itemId
-        == selectedId).itemName}`);
-    }
-  });
-
-  // Example of showing PopupMenu on the bottom of the second button:
-
-  const button2 = document.getElementById('showMenuButton2');
-  button2.addEventListener('click', async e => {
+  // Example of showing PopupMenu on the bottom of the button:
+  const button = document.getElementById('showMenuButton');
+  button.addEventListener('click', async e => {
     // Mark this click event as ignored by the PopupMenu's event listener
     e.preventDefault();
     // Align PopupMenu position to the bottom left of the button
-    const position = PopupMenuPosition.alignBottomLeft(button2);
+    const position = PopupMenuPosition.alignBottomLeft(button);
     // Show PopupMenu and wait for the selected menu id asynchronously
     const selectedId = await PopupMenu.show(itemList, position);
     if (selectedId) {
@@ -44,7 +27,6 @@ window.onload = () => {
         == selectedId).itemName}`);
     }
   });
-
 }
 
 

@@ -103,13 +103,11 @@ export default class PopupMenu extends HTMLElement {
     menuItems.forEach(item => {
       const p = document.createElement('p');
       p.innerText = item.itemName;
-
       const menuItem = document.createElement('div');
       menuItem.classList.add('popup-menu-item');
       menuItem.addEventListener('click', () => {
         this._onPopupMenuItemClick(item.itemId);
       });
-
       if (item.imageUrl || isImagePresent) {
         const image = document.createElement('div');
         image.style.backgroundImage
@@ -117,12 +115,32 @@ export default class PopupMenu extends HTMLElement {
         image.classList.add('image');
         menuItem.appendChild(image);
       }
-
       menuItem.appendChild(p);
       this.shadow.appendChild(menuItem);
     });
-
     this.shadow.appendChild(style);
+    this._onHandleClosingEvent = this._onHandleClosingEvent.bind(this);
+  }
+
+  connectedCallback() {
+    ['click', 'resize', 'orientationchange'].forEach(eventName =>
+      window.addEventListener(eventName, this._onHandleClosingEvent));
+  }
+
+  disconnectedCallback() {
+    ['click', 'resize', 'orientationchange'].forEach(eventName =>
+      window.removeEventListener(eventName, this._onHandleClosingEvent));
+  }
+
+  /**
+   * @private
+   * @param {DOMEvent} e Closes the existing instance of PopupMenu if specified
+   * event is not defaultPrevented
+   */
+  _onHandleClosingEvent(e) {
+    if (!e.defaultPrevented) {
+      PopupMenu.close();
+    }
   }
 
   /**
@@ -203,14 +221,6 @@ export default class PopupMenu extends HTMLElement {
 
 if (!window.customElements.get(PopupMenu.is)) {
   window.customElements.define(PopupMenu.is, PopupMenu);
-  window.addEventListener('click', event => {
-    // Do not close the PopupMenu for the events marked as ignored for the
-    // PopupMenu
-    if (!event.defaultPrevented) {
-      // When the non-marked click event is received, always close PopupMenu
-      PopupMenu.close();
-    }
-  });
 }
 
 export { PopupMenuItem, PopupMenuPosition };
