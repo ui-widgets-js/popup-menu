@@ -2,8 +2,8 @@
 
 Simple, lightweight, framework-independent, and easy-to-use popup menu UI widget for web applications.
 
-<img src="https://raw.githubusercontent.com/web-components-js/popup-menu/HEAD/screenshot1.png" height="30%" width="30%">
-<img src="https://raw.githubusercontent.com/web-components-js/popup-menu/HEAD/screenshot2.png" height="30%" width="30%">
+<img src="https://raw.githubusercontent.com/web-components-js/popup-menu/HEAD/screenshot1.png" height="250px">
+<img src="https://raw.githubusercontent.com/web-components-js/popup-menu/HEAD/screenshot2.png" height="250px">
 
 ## Viewing Demo Application
 
@@ -43,7 +43,7 @@ Modify the font, the color, or any other property of the PopupMenu by adding css
   }
 ```
 
-<img src="https://raw.githubusercontent.com/web-components-js/popup-menu/HEAD/screenshot3.png" height="30%" width="30%">
+<img src="https://raw.githubusercontent.com/web-components-js/popup-menu/HEAD/screenshot3.png" height="250px">
 
 ## License
 
