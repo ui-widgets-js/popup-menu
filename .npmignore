@@ -1,7 +1,7 @@
 /demo/
 /.DS_Store
 /eslint.json
-/gulpfile.json
+/gulpfile.js
 /node_modules/
 /screenshot1.png
 /screenshot2.png

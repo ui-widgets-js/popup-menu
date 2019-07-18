@@ -17,10 +17,8 @@ First, run `npm install` to install all development dependencies. Then run `npm 
 
 ## Using PopupMenu in your application
 
-Check <a href="https://github.com/ui-widgets-js/popup-menu/blob/master/demo/index.js">demo/index.js</a> for the full example code.
-
 ```
-  import PopupMenu, { PopupMenuItem, PopupMenuPosition } from './popup-menu.js';
+  import PopupMenu, { PopupMenuItem, PopupMenuPosition } from '@ui-widgets-js/popup-menu';
 
   // This example shows how to display PopupMenu under the specific button
   const myButton = document.getElementById('myButton');
@@ -33,6 +31,7 @@ Check <a href="https://github.com/ui-widgets-js/popup-menu/blob/master/demo/inde
   const position = PopupMenuPosition.alignBottomLeft(myButton);
   const selectedId = await PopupMenu.show(itemList, position);
 ```
+Check <a href="https://github.com/ui-widgets-js/popup-menu/blob/master/demo/index.js">demo/index.js</a> for the full example code.
 
 ## License
 
