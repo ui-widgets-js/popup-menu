@@ -60,8 +60,9 @@ export default class PopupMenu extends HTMLElement {
         -ms-user-select: none;
         user-select: none;
         color: #24292E;
-        border-radius: 5px;
         overflow: hidden;
+        padding-top: 5px;
+        padding-bottom: 5px;
       }
 
       .popup-menu-item {
@@ -78,7 +79,7 @@ export default class PopupMenu extends HTMLElement {
       }
 
       .popup-menu-item:hover {
-        background-color: #F1F8FF;
+        background-color: #D3D3D352;
       }
 
       .popup-menu-item .image {

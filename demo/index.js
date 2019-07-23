@@ -7,10 +7,10 @@ window.onload = () => {
 
   // Create menu items for the PopupMenu
   const itemList = [
-    new PopupMenuItem(1, 'Menu item One', './images/image-one.svg'),
-    new PopupMenuItem(2, 'Menu item Two', './images/image-two.svg'),
-    new PopupMenuItem(3, 'Menu item Three'),
-    new PopupMenuItem(4, 'Menu item Four')
+    new PopupMenuItem(1, 'Play', './images/image-play.svg'),
+    new PopupMenuItem(2, 'Pause', './images/image-pause.svg'),
+    new PopupMenuItem(3, 'Next', './images/image-next.svg'),
+    new PopupMenuItem(4, 'Previous', './images/image-previous.svg')
   ];
 
   // Example of showing PopupMenu on the bottom of the button:
