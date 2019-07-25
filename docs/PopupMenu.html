@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Class: PopupMenu</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Class: PopupMenu</h1>
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        <h2><span class="attribs"><span class="type-signature"></span></span>PopupMenu<span class="signature">()</span><span class="type-signature"></span></h2>
+        
+            <div class="class-description">Implements the functionality of a popup up menu to be displayed in your
+application. The popup menu contains of the list of the provided menu items.
+<p>
+PopupMenu closes itself on <a href="https://www.w3schools.com/jsref/event_onclick.asp">click</a> event
+fired by <a href="https://www.w3schools.com/js/js_window.asp">window</a>. To display
+the menu on click, you must mark the 'click' event as
+<a href="https://developer.mozilla.org/en-US/docs/Web/API/Event/defaultPrevented">defaultPrevented</a>
+using <a href="https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault">preventDefault()</a>,
+so the PopupMenu will ignore it. See the
+<a href="https://github.com/ui-widgets-js/popup-menu/blob/master/demo/index.js">example</a>.
+</p>
+<p>
+PopupMenu closes itself on <a href="https://www.w3schools.com/jsref/event_onresize.asp"> resize</a> and
+<a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/orientationchange_event">orientationchange</a>
+events fired by <a href="https://www.w3schools.com/js/js_window.asp">window</a>.
+</p></div>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+
+    
+    <h2>Constructor</h2>
+    
+
+    
+    <h4 class="name" id="PopupMenu"><span class="type-signature"></span>new PopupMenu<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="implements">Implements:</dt>
+    <dd class="implements"><ul>
+        
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement">HTMLElement</a></li>
+        
+    </ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="popup-menu.js.html">popup-menu.js</a>, <a href="popup-menu.js.html#line9">line 9</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+<h5>Listens to Events:</h5>
+<ul>
+    <li>window#event:click</li>
+
+    <li>window#event:resize</li>
+
+    <li>window#event:orientationchange</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>// Display PopupMenu under the button
+ const myButton = document.getElementById('myButton');
+ const itemList = [
+   new PopupMenuItem(1, 'Menu item 1'),
+   new PopupMenuItem(2, 'Menu item 2'),
+   new PopupMenuItem(3, 'Menu item 3')
+ ];
+ const position = PopupMenuPosition.alignBottomLeft(myButton);
+ const selectedId = await PopupMenu.show(itemList, position);</code></pre>
+
+
+
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id=".close"><span class="type-signature">(static) </span>close<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Closes any existing instance of PopupMenu on the screen
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="popup-menu.js.html">popup-menu.js</a>, <a href="popup-menu.js.html#line216">line 216</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id=".show"><span class="type-signature">(async, static) </span>show<span class="signature">(menuItems, position)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Displays the popup menu and returns the id of the selected item
+asynchronously.
+
+Example of usage:
+
+ const selectedId = await PopupMenu.show(itemsList, position);
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>menuItems</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;<a href="PopupMenuItem.html">PopupMenuItem</a>></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The list of items to be displayed</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>position</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="PopupMenuPosition.html">PopupMenuPosition</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The position of PopupMenu</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="popup-menu.js.html">popup-menu.js</a>, <a href="popup-menu.js.html#line183">line 183</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="PopupMenu.html">PopupMenu</a></li><li><a href="PopupMenuItem.html">PopupMenuItem</a></li><li><a href="PopupMenuPosition.html">PopupMenuPosition</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.3</a> on Thu Jul 25 2019 15:40:59 GMT-0400 (Eastern Daylight Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

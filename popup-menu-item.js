@@ -2,7 +2,7 @@
  * @class PopupMenuItem
  * @classdesc A model of an item of the menu to be displayed
  */
-export default class PopupMenuItem {
+class PopupMenuItem {
   /**
    * @constructor
    * @param {any} id The unique ID of the menu item
@@ -15,3 +15,5 @@ export default class PopupMenuItem {
     this.imageUrl = imageUrl;
   }
 }
+
+export default PopupMenuItem;
