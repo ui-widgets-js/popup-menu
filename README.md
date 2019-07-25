@@ -3,7 +3,6 @@
 Simple, lightweight, framework-independent, and easy-to-use popup menu UI widget for web applications.
 
 ## PopupMenu demo
-<p>
 
 ![All menus are with icons](https://raw.githubusercontent.com/web-components-js/popup-menu/HEAD/screenshot1.png "All menus are with icons") ![Some menus are with icons](https://raw.githubusercontent.com/web-components-js/popup-menu/HEAD/screenshot2.png "Some menus are with icons")
 
