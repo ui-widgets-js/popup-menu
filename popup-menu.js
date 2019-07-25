@@ -39,87 +39,80 @@ export default class PopupMenu extends HTMLElement {
       throw new Error('This is private constructor. Use PopupMenu.show() instead.');
     }
     super();
-    this.shadow = this.attachShadow({ mode: 'open' });
-    const style = document.createElement('style');
-    style.textContent = `
-      :host {
-        width: auto;
-        height: auto;
-        font-size: small;
-        font-family: Arial, sans-serif;
-        max-width: 320px;
-        overflow-y: auto;
-        overflow-x: hidden;
-        background-color: white;
-        position: absolute;
-        box-sizing: border-box;
-        box-shadow: rgba(221, 221, 221, 0.35) 0px 2px 8px;
-        border: 1px lightgray solid;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        color: #24292E;
-        overflow: hidden;
-        padding-top: 5px;
-        padding-bottom: 5px;
-      }
+    this.attachShadow({ mode: 'open' });
+    this.shadowRoot.innerHTML = `
+      <style>
+        :host {
+          width: auto;
+          height: auto;
+          font-size: small;
+          font-family: Arial, sans-serif;
+          max-width: 320px;
+          overflow-y: auto;
+          overflow-x: hidden;
+          background-color: white;
+          position: absolute;
+          box-sizing: border-box;
+          box-shadow: rgba(221, 221, 221, 0.35) 0px 2px 8px;
+          border: 1px lightgray solid;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+          color: #24292E;
+          overflow: hidden;
+          padding-top: 5px;
+          padding-bottom: 5px;
+        }
 
-      .popup-menu-item {
-        text-align: left;
-        overflow: hidden;
-        display: flex;
-        width: 100%;
-        max-width: 100%;
-        height: 32px;
-        max-height: 32px;
-        flex-direction: row;
-        justify-content: flex-start;
-        align-items: center;
-      }
+        .popup-menu-item {
+          text-align: left;
+          overflow: hidden;
+          display: flex;
+          width: 100%;
+          max-width: 100%;
+          height: 32px;
+          max-height: 32px;
+          flex-direction: row;
+          justify-content: flex-start;
+          align-items: center;
+        }
 
-      .popup-menu-item:hover {
-        background-color: #D3D3D352;
-      }
+        .popup-menu-item:hover {
+          background-color: #D3D3D352;
+        }
 
-      .popup-menu-item .image {
-        min-width: 30px;
-        min-height: 30px;
-        background-repeat: no-repeat;
-        background-position: center;
-      }
+        .popup-menu-item .image {
+          min-width: 30px;
+          min-height: 30px;
+          background-repeat: no-repeat;
+          background-position: center;
+        }
 
-      .popup-menu-item p {
-        margin-top: 0px;
-        margin-bottom: 0px;
-        margin-left: 8px;
-        margin-right: 8px;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        color: inherit;
-      }`;
-
-    let isImagePresent = !!(menuItems.find(item => item.imageUrl));
+        .popup-menu-item p {
+          margin-top: 0px;
+          margin-bottom: 0px;
+          margin-left: 8px;
+          margin-right: 8px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          color: inherit;
+        }
+      </style>
+      `;
     menuItems.forEach(item => {
-      const p = document.createElement('p');
-      p.innerText = item.itemName;
       const menuItem = document.createElement('div');
       menuItem.classList.add('popup-menu-item');
+      menuItem.innerHTML = `
+        <div class="image" style="background-image: url('${item.imageUrl}')"></div>
+        <p>${item.itemName}</p>
+      `;
       menuItem.addEventListener('click', () => {
         this._onPopupMenuItemClick(item.itemId);
       });
-      if (item.imageUrl || isImagePresent) {
-        const image = document.createElement('div');
-        image.style.backgroundImage
-          = item.imageUrl ? `url('${item.imageUrl}')` : '';
-        image.classList.add('image');
-        menuItem.appendChild(image);
-      }
-      menuItem.appendChild(p);
-      this.shadow.appendChild(menuItem);
+      this.shadowRoot.appendChild(menuItem);
     });
-    this.shadow.appendChild(style);
     this._onHandleClosingEvent = this._onHandleClosingEvent.bind(this);
   }
 
@@ -174,8 +167,8 @@ export default class PopupMenu extends HTMLElement {
    */
   static async show(menuItems, position) {
     // Validate the input
-    if (!Array.isArray(menuItems)) {
-      throw new Error('Invalid parameter: items must be an Array of PopupMenuItem');
+    if (!Array.isArray(menuItems) || menuItems.length === 0) {
+      throw new Error('Invalid parameter: items must be a non empty Array of PopupMenuItem');
     }
     if (!menuItems.every(item => item instanceof PopupMenuItem)) {
       throw new Error(`Invalid parameter: each menu item must be an instance PopupMenuItem`);
