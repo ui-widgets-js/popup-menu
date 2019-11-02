@@ -14,7 +14,12 @@ Simple, lightweight, framework-independent, and easy-to-use popup menu UI widget
 
 ## Viewing Demo Application
 
-First, run `npm install` to install all development dependencies. Then run `npm start` to start the demo application in the default browser.
+Clone repository
+```
+  git clone https://github.com/ui-widgets-js/popup-menu.git
+```
+
+Run `npm install` to install all development dependencies. Finally, run `npm start` to start the demo application in the default browser.
 
 
 ## Using PopupMenu in your application
@@ -37,12 +42,12 @@ The documentation is available [here](https://ui-widgets-js.github.io/popup-menu
 ```
 Check [demo/index.js](https://github.com/ui-widgets-js/popup-menu/blob/master/demo/index.js) for the full example code.
 
-Note: This example code uses [import](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import). Consider using [webpack](https://www.npmjs.com/package/webpack) to import PopupMenu same way.
+Note: This example code uses module [import](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import). Consider using [webpack](https://www.npmjs.com/package/webpack) to be able to import PopupMenu the same way.
 
 
 ## Styling the PopupMenu
 
-Modify the font, the color, or any other property of the PopupMenu by adding css for _popup-menu_ tag in your application. For example:
+Modify the font, the color, or any other property of PopupMenu by adding css for _popup-menu_ tag in your application. For example:
 ```
   body popup-menu {
     background-color: #add8e624;
