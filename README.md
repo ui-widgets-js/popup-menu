@@ -35,8 +35,10 @@ The documentation is available [here](https://ui-widgets-js.github.io/popup-menu
   const position = PopupMenuPosition.alignBottomLeft(myButton);
   const selectedId = await PopupMenu.show(itemList, position);
 ```
-
 Check [demo/index.js](https://github.com/ui-widgets-js/popup-menu/blob/master/demo/index.js) for the full example code.
+
+Note: This example code uses [import](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import). Consider using [webpack](https://www.npmjs.com/package/webpack) to import PopupMenu same way.
+
 
 ## Styling the PopupMenu
 

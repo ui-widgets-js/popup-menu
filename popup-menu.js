@@ -77,6 +77,9 @@ export default class PopupMenu extends HTMLElement {
           overflow: hidden;
           padding-top: 5px;
           padding-bottom: 5px;
+          animation: appear .2s ease-in;
+          -webkit-animation: appear .2s ease-in;
+          -moz-animation: appear .2s ease-in;
         }
 
         .popup-menu-item {
@@ -113,15 +116,55 @@ export default class PopupMenu extends HTMLElement {
           white-space: nowrap;
           color: inherit;
         }
+
+        @keyframes appear {
+          0% {
+            opacity: 0;
+          }
+          100% {
+            opacity: 1;
+          }
+        }
+
+        @-webkit-keyframes appear {
+          0% {
+            opacity: 0;
+          }
+          100% {
+            opacity: 1;
+          }
+        }
+
+        @-moz-keyframes appear {
+          0% {
+            opacity: 0;
+          }
+          100% {
+            opacity: 1;
+          }
+        }
+
       </style>
       `;
+
+    const isContainsImages = menuItems.findIndex(item => item.imageUrl) >= 0;
     menuItems.forEach(item => {
       const menuItem = document.createElement('div');
       menuItem.classList.add('popup-menu-item');
-      menuItem.innerHTML = `
-        <div class="image" style="background-image: url('${item.imageUrl}')"></div>
-        <p>${item.itemName}</p>
-      `;
+      menuItem.innerHTML = `<p>${item.itemName}</p>`;
+
+      if (item.imageUrl) {
+        menuItem.innerHTML =
+          `<div class="image" style="background-image: url('${item.imageUrl}')"></div>`
+          + menuItem.innerHTML;
+      }
+      else if (isContainsImages) {
+        // Place holder to align record with the records which contain image
+        menuItem.innerHTML =
+          `<div class="image"></div>`
+          + menuItem.innerHTML;
+      }
+
       menuItem.addEventListener('click', () => {
         this._onPopupMenuItemClick(item.itemId);
       });
