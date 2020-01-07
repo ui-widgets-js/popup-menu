@@ -1,6 +1,6 @@
 {
   "name": "@ui-widgets-js/popup-menu",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "Simple, lightweight, framework-independent, and easy-to-use popup menu UI widget for web applications.",
   "author": {
     "name": "Andrey Klebanov",
@@ -27,12 +27,10 @@
     "gulp": "^4.0.2",
     "gulp-eslint": "^6.0.0",
     "jsdoc": "^3.6.3",
-    "polyserve": "^0.27.15",
-    "webpack": "^4.35.3",
-    "webpack-cli": "^3.3.10"
+    "polyserve": "^0.27.15"
   },
   "scripts": {
-    "start": "npx webpack && polyserve --open 'demo/'",
+    "start": "polyserve --open --open-path 'demo/index.html'",
     "docs": "npx jsdoc popup-menu.js popup-menu-item.js popup-menu-position.js --readme ./README.md --destination docs"
   }
 }

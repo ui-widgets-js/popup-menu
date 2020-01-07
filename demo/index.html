@@ -2,8 +2,9 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>popup-menu demo</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <style>
@@ -25,6 +26,6 @@
       My button
     </button>
   </body>
-  <!-- This is bundled index.js file -->
-  <script src='demo.bundle.js'></script>
+  <!-- Load as module to be able to import modules -->
+  <script type="module" src="index.js"></script>
 </html>
