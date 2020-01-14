@@ -4,6 +4,8 @@ Simple, lightweight, framework-independent, and easy-to-use popup menu UI widget
 
 ## PopupMenu demo
 
+Check the [demo application](https://codesandbox.io/s/boring-sound-wrb4h?fontsize=14&hidenavigation=1&theme=dark) on Code Sandbox.
+
 ![All menus are with icons](https://raw.githubusercontent.com/web-components-js/popup-menu/HEAD/screenshot1.png "All menus are with icons") ![Some menus are with icons](https://raw.githubusercontent.com/web-components-js/popup-menu/HEAD/screenshot2.png "Some menus are with icons")
 
 ## Installing from NPM
@@ -14,13 +16,14 @@ Simple, lightweight, framework-independent, and easy-to-use popup menu UI widget
 
 ## Viewing Demo Application
 
-Clone repository
+Clone the repository, install development dependencies, and start the application:
 ```
   git clone https://github.com/ui-widgets-js/popup-menu.git
+  cd popup-menu
+  npm install
+  npm start
 ```
-
-Run `npm install` to install all development dependencies. Finally, run `npm start` to start the demo application in the default browser.
-
+The demo app will start in your default browser.
 
 ## Using PopupMenu in your application
 
@@ -43,8 +46,7 @@ The documentation is available [here](https://ui-widgets-js.github.io/popup-menu
   const selectedId = await PopupMenu.show(itemList, position);
 ```
 
-This example code uses module [import](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import). Consider using [webpack](https://www.npmjs.com/package/webpack) to be able to import PopupMenu the same way. Alternatively you can load your JavaScript file as _type="module"_ in html. Check [demo/index.html](https://github.com/ui-widgets-js/popup-menu/blob/master/demo/index.html) for example. 
-
+This example code uses module [import](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import). Consider using [webpack](https://www.npmjs.com/package/webpack) to be able to import PopupMenu the same way. Alternatively you can load your JavaScript file as _type="module"_ in html. Check [demo/index.html](https://github.com/ui-widgets-js/popup-menu/blob/master/demo/index.html) for example.
 
 ## Styling the PopupMenu
 
